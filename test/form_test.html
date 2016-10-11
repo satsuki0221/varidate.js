@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" >
+	<style>
+	.error{
+		border-bottom: 1px solid #ff6d6d;
+	}
+	.error_message{
+		color: #ff6d6d;
+	}
+	</style>
+	<!-- jQuery first, then Tether, then Bootstrap JS. -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../varidate.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		new varidation({
+			submitBtn: '#submitBtn',
+			varidateItem:{
+				form1 : {
+					common : {
+						selecter : '#form1',
+					}
+				},
+				form2 : {
+					common : {
+						selecter : '#form2',
+						kana : true
+					}
+				},
+				form3 : {
+					common : {
+						selecter : '#form3',
+						number : true
+					}
+				},
+				form4 : {
+					common : {
+						selecter : '#form4',
+						telpost : true
+					}
+				},
+				form5 : {
+					common : {
+						selecter : '#form5',
+						maxlength : true
+					},
+					options  : {
+						maxlength : 11
+					},
+				},
+				form6 : {
+					common : {
+						selecter : '#form6',
+						minlength : true
+					},
+					options  : {
+						minlength : 4
+					},
+				},
+				form7 : {
+					common : {
+						selecter : '#form7',
+						mail : true
+					}
+				},
+				form8 : {
+					common : {
+						selecter : '#form8',
+						alphanumeric : true
+					}
+				},
+				form9 : {
+					common : {
+						selecter : '#form9',
+						alphaupper : true
+					}
+				},
+				form10 : {
+					common : {
+						selecter : '#form10',
+						en_one_char : true
+					}
+				},
+				form11 : {
+					common : {
+						selecter : '#form11',
+						num_one_char : true
+					}
+				},
+				form12 : {
+					common : {
+						selecter : '#form12',
+						check : "#form11"
+					}
+				},
+				form13 : {
+					common : {
+						selecter : '#form13',
+						credit : true
+					}
+				}
+			}
+		});
+	});
+	</script>
+	</head>
+	<body>
+		<form>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form1" id="form1" placeholder="入力必須項目">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form2" id="form2" placeholder="カナのみ">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form3" id="form3" placeholder="数字のみ">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form4" id="form4" placeholder="- を削除する数字のみ">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form5" id="form5" placeholder="最大記入文字数">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form6" id="form6" placeholder="最小記入文字数">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form7" id="form7" placeholder="メールアドレステスト">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form8" id="form8" placeholder="英数字のみ">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form9" id="form9" placeholder="大文字の英字のみ">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form10" id="form10" placeholder="英字1字以上">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form11" id="form11" placeholder="数字1字以上">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form12" id="form12" placeholder="設定したinputの内容と一致するかどうか">
+
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="form13" id="form13" placeholder="クレジットカードの番号確認">
+
+			</div>
+			<button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+
+	</body>
+</html>
