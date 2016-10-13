@@ -243,6 +243,29 @@ describe("varidationのテスト", function() {
 		} ).alphaupper() );
 	});
 
+	it("英字が1文字以上入っているか true確認", function() {
+		assert.equal( true , new varidateModel({
+			common:{},
+			options:{},
+			messages:{en_one_char : false}
+		} ).en_one_char("11111a") );
+	});
+
+	it("英字が1文字以上入っているか false確認", function() {
+		assert.equal( false , new varidateModel({
+			common:{},
+			options:{},
+			messages:{ en_one_char : false}
+		} ).en_one_char("111111111") );
+	});
+
+	it("英字が1文字以上入っているか false確認(undefined)", function() {
+		assert.equal( false , new varidateModel({
+			common:{},
+			options:{},
+			messages:{ en_one_char : false}
+		} ).en_one_char() );
+	});
 
 	it("数字が1文字以上入っているか true確認", function() {
 		assert.equal( true , new varidateModel({

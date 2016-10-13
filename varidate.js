@@ -1,5 +1,5 @@
 /*
-	@ver 1.1
+	@ver 1.2
 */
 
 function varidateModel( varidateItem ){
@@ -17,13 +17,13 @@ function varidateModel( varidateItem ){
 		num_one_char : false,
 		credit       : false,
 		kana         : false,
-		alphaupper   : false,
+		alphaupper   : false
 	};
 
 	dftOptions = {
 		required  : '',
 		maxlength : '',
-		minlength : 0,
+		minlength : 0
 	};
 
 	this.Common  = $.extend( dftCommon , varidateItem.common );
@@ -46,7 +46,7 @@ function varidateModel( varidateItem ){
 		num_one_char : '数字を1文字以上含めてください',
 		credit       : '不正なカード番号です',
 		kana         : '全角カタカナで入力してください',
-		alphaupper   : '全て大文字アルファベットで入力してください',
+		alphaupper   : '全て大文字アルファベットで入力してください'
   };
 
   	this.Messages   = $.extend( dftMessages , varidateItem.messages );
@@ -129,6 +129,9 @@ varidateModel.prototype.alphaupper = function( value ){
 
 // 英字が1文字以上記入されているか。
 varidateModel.prototype.en_one_char = function( value ){
+
+	if( !value ) return this.Messages.en_one_char;
+
 	var strs = value.split('');
 
 	for( var key  in  strs ){
